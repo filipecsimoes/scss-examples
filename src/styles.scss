@@ -1,9 +1,30 @@
 /* scss variabkle */
 $main_color: hsl(160,100%,50%);
+$light-bg: lightgrey;
+$dark-bg: grey;
 
-@mixin flex-div{
+// array
+$sizes: 40px, 50px, 60px;
+
+// function
+@function sum($numbers) {
+  $sum: 0;
+
+  @each $number in $numbers {
+    $sum: $sum + $number;
+  }
+
+  @return $sum;
+}
+
+
+@mixin flex-div($theme){
   display: flex;
-  background: grey;
+  @if $theme=='light'{
+    background: $light-bg;
+  }@else {
+    background: $dark-bg;
+  }
 }
 
 :root {
@@ -19,7 +40,10 @@ body {
 
 // nesting
 .subtitle{
-  @include flex-div;
+  height: sum($sizes);
+
+  @include flex-div(light);
+  
   font-size: 48px;
   .first-line {
         color: blue;

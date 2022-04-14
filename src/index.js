@@ -1,6 +1,6 @@
 import "./styles.scss";
 
 document.getElementById("app").innerHTML = `
-<h1>DOM manipulation!</h1>
+<h1>SCSS examples!</h1>
 
 `;
