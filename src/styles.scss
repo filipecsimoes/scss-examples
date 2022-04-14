@@ -1,5 +1,11 @@
 /* scss variabkle */
 $main_color: hsl(160,100%,50%);
+
+@mixin flex-div{
+  display: flex;
+  background: grey;
+}
+
 :root {
   --main-color: hsl(0,100%,50%);
 }
@@ -9,4 +15,20 @@ body {
   font-family: sans-serif;
   // color: $main_color;
   color: var(--main-color);
+}
+
+// nesting
+.subtitle{
+  @include flex-div;
+  font-size: 48px;
+  .first-line {
+        color: blue;
+  }
+  .second-line {
+    color: green;
+    &:hover {
+      color: black;
+    }
+  }
+
 }
